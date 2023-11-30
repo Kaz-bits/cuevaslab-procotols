@@ -126,7 +126,6 @@ FRET.spectrum <- function(dir.fret,
     if (exists("sptr_1") & exists("sptr_2") == TRUE) {
       
       # Data from replicate 1
-      Datos de réplica 1
       temp_fret_N <- cbind(sptr_1, sptr_2)
       
       # Create spectra plot
