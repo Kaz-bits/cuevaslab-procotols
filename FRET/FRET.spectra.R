@@ -169,7 +169,6 @@ FRET.spectrum <- function(dir.fret,
         if (bios_name == TRUE) {
           
           # For adding the desired name 
-          Colocar nombre del número del biosensor  
           annotate(geom = "text", x = 505, y = ymax_name, 
                    label = paste0("IDRBS-", bios), size = 4.5)
           
