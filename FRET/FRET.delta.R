@@ -1,7 +1,7 @@
-# Load requiered packages
+# Load required packages
 library(ggplot2)
 
-# Function to performed structural sensivitiy values
+# Function to perform structural sensitivity values
 FRET.delta <- function(dir.fret, 
                        format.plot = "png",
                        xaxis_max = 0.5, 
@@ -12,7 +12,7 @@ FRET.delta <- function(dir.fret,
   # Obtain names for each construct
   temp_files <- list.files(dir.fret)
   
-  # Create empty vector to save information of mean, sd and names of the constructs
+  # Create an empty vector to save information on mean, sd and names of the constructs
   temp_mean <- c()
   temp_sd <- c()
   temp_names <- c()
@@ -20,7 +20,7 @@ FRET.delta <- function(dir.fret,
   # Analyze each construct
   for (bios in temp_files) {
     
-    # Obtain directory of each construct
+    # Obtain the directory of each construct
     temp_path <- file.path(dir.fret, bios, "DATA", paste0(bios, ".csv"))
     
     # Verify if construct files exist
@@ -42,14 +42,14 @@ FRET.delta <- function(dir.fret,
       # Obtain mean
       temp_mean[length(temp_mean) + 1] <- mean(h - i)
       
-      # Obtain standar deviation
+      # Obtain standard deviation
       temp_sd[length(temp_sd) + 1] <- sd(h - i)
       
     }
     
   }
   
-  # Create a dat aframe for saving data
+  # Create a data frame for saving data
   fret_delta <- data.frame(matrix(nrow = length(temp_names), 
                                   ncol = 3))
   
@@ -62,20 +62,20 @@ FRET.delta <- function(dir.fret,
   # Add mean column
   fret_delta$mean_delta <- temp_mean
   
-  # Add standar deviation column
+  # Add standard deviation column
   fret_delta$sd_delta <- temp_sd
   
   # Add names column
   fret_delta$construct <- temp_names
   
-  # Save file with the delta FRET data
+  # Save the file with the delta FRET data
   write.csv(x = fret_delta, 
             file = file.path(dir.fret, paste0("all_biosensors.csv")), 
             quote = FALSE, 
             row.names = FALSE)
   
   
-  # Create scatter plot with standard deviation
+  # Create a scatter plot with a standard deviation
   plot <- ggplot() +
     geom_vline(xintercept = unname(quantile(fret_delta$mean_delta)[2]), 
                lty = 2) +
