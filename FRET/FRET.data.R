@@ -15,7 +15,7 @@ FRET.data <- function(dir.input,
   dir.create(temp_dir, showWarnings = FALSE)
   
   # Obtain the name of the folder where replicates are saved
-  temp_files <<- list.files(dir.input)
+  temp_files <- list.files(dir.input)
   
   # Obtain construct names
   for (i in temp_files) {
