@@ -1,4 +1,4 @@
-# Load requiered packages
+# Load required packages
 library(ggplot2)
 
 # Function for creating spectra plots
@@ -11,18 +11,18 @@ FRET.spectrum <- function(dir.fret,
                           bios_name = TRUE) {
   
   
-  # Obtain name of the constructs analyzed and save in the FRET folder (Run FRET.data script)
+  # Obtain the name of the constructs analyzed and save them in the FRET folder (Run FRET.data script)
   temp_files_n <- list.files(dir.fret)
   
   #Load files
   for (bios in temp_files_n) {
     
-    # Obtain name of each construct 
+    # Obtain the name of each construct 
     temp_files <- list.files(path = file.path(dir.fret, bios, "DATA"), 
                              pattern = "sptr")
     
     
-    # Load data from plate 1 and replicate 1 and verify if file exists
+    # Load data from plate 1 and replicate 1 and verify if the file exists
     temp_path_1 <- file.path(dir.fret, bios, "DATA", temp_files[1])
     if (file.exists(temp_path_1) == TRUE) {
       
@@ -82,7 +82,7 @@ FRET.spectrum <- function(dir.fret,
     } 
     
     
-    # Verifiy if file exists
+    # Verifiy if the file exists
     temp_path_5 <- file.path(dir.fret, bios, "DATA", temp_files[5])
     if (file.exists(temp_path_5) == TRUE) {
       
@@ -112,7 +112,7 @@ FRET.spectrum <- function(dir.fret,
     } 
     
     
-    # Create spectra plot colors
+    # Create spectra plot colours
     color_lines <- c("#add8e6", "#92b8dc", "#7698d1", 
                      "#5b78c7", "#3f58bd", "#2438b2", 
                      "#0818a8")
@@ -239,7 +239,7 @@ FRET.spectrum <- function(dir.fret,
                            values = color_lines, 
                            label = NaCl_lines) +
         
-        # Add if statement for adding the name of the construct
+        # Add an if statement for adding the name of the construct
         if (bios_name == TRUE) {
           
           # For adding the desired name 
@@ -248,13 +248,13 @@ FRET.spectrum <- function(dir.fret,
           
         } else {
           
-          # For adding the name put in the folder FRET
+          # For adding the name put it in the folder FRET
           annotate(geom = "text", x = 505, y = ymax_name, 
                    label = bios, size = 4.5)
           
         }
       
-      # Generate name of the plot to be saved
+      # Generate the name of the plot to be saved
       name_plot <- paste0("plot_sptr_", bios, "_", temp_fret_N$Replicate[1], ".",
                           format.plot)
       
@@ -264,7 +264,7 @@ FRET.spectrum <- function(dir.fret,
              device = format.plot, width = 6, height = 4, units = "in", 
              dpi = 450)
       
-      # Remove variable temp_fret_N for analyzing next constructs
+      # Remove variable temp_fret_N for analyzing the next constructs
       remove(... = temp_fret_N)
       
     } # End replicate 2
@@ -312,7 +312,7 @@ FRET.spectrum <- function(dir.fret,
                            values = color_lines, 
                            label = NaCl_lines) +
         
-        # Add if statement for adding the name of the construct
+        # Add an if statement for adding the name of the construct
         if (bios_name == TRUE) {
           
           # For adding the desired name 
@@ -321,13 +321,13 @@ FRET.spectrum <- function(dir.fret,
           
         } else {
           
-          # For adding the name put in the folder FRET
+          # For adding the name put it in the folder FRET
           annotate(geom = "text", x = 505, y = ymax_name, 
                    label = bios, size = 4.5)
           
         }
       
-      # Generate name of the plot to be saved
+      # Generate the name of the plot to be saved
       name_plot <- paste0("plot_sptr_", bios, "_", temp_fret_N$Replicate[1], ".",
                           format.plot)
       
@@ -337,13 +337,13 @@ FRET.spectrum <- function(dir.fret,
              device = format.plot, width = 6, height = 4, units = "in", 
              dpi = 450)
       
-      # Remove variable temp_fret_N for analyzing next constructs
+      # Remove variable temp_fret_N for analyzing the next constructs
       remove(... = temp_fret_N)
       
     } # End replicate 3
   }
   
-  # Show messagges if analysis was succed
-  message("Plots created with succed")
+  # Show messages if analysis was succeed
+  message("Plots created with succeed")
   
 }
