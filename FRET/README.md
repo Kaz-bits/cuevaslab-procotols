@@ -3,7 +3,7 @@ This organization of the data was performed using a CLARIOstar plate reader.
 
 
 ## Excel files from the plate reader
-All of your data is highly recommended to be organized as I will explain below.
+All of your data is highly recommended to be organized, as I will explain below.
 
 When you have finished obtaining all of your data from the plate reader CLARIOstar, you will
 obtain an EXCEL file that must show the following information:
@@ -29,7 +29,7 @@ data, It is
 
 a. do not erase any information
 b. do not erase any name in the file
-c. maintain the row and columns that appear in the file
+c. maintain the rows and columns that appear in the file
 d. be sure that the first sheet of the file corresponds to the previous data
 e. the name "Well" must appear in the ten (10) row (this is important)
 
@@ -106,7 +106,7 @@ containing the data to generate the boxplot
 
 ## FRET.spectrum file
 This script is used to generate the spectrum of all of the replicates in the FRET experiment. It
-generates three plots with a blue palette colour to identify the salt concentration. The concentration
+generates three plots with a blue palette to identify the salt concentration. The concentration
 will appear as a legend on the right side of the plot and will be displayed in Molar units. 
 
 This script consists of a function called FRET.spectrum that has one necessary argument and six
@@ -116,20 +116,20 @@ The arguments are:
 
 1. dir.fret: the directory of the FRET folder generated with the FRET.data script (string argument)
 2. format.plot: the extension of the plots. You can choose "pdf" or "png" (string argument)
-3. ymax_name: related to the y-axis. Indicates the high of the name of your construct displayed in the plot (numeric argument)
+3. ymax_name: related to the y-axis. Indicates the height of the name of your construct displayed in the plot (numeric argument)
 4. ymax_axis: indicates the maximum range of the y-axis (depends on the FRET response) (numeric argument)
 5. ymix_axis: indicates the minimum range of the y-axis (depends on the FRET response) (numeric argument)
 6. yaxis_ticks: the interval of the y-axis to show in your plot (numeric argument)
 7. bios_name: add the name of the construct in the plot. If you want your name, change it to FALSE (logical argument)
 
-All of the spectra will be saved in the PLOTS subfolder generated when you ran the FRET.data script. 
+All of the spectra will be saved in the PLOTS subfolder generated when you run the FRET.data script. 
 
 
 
 
 ## FRET.boxplot file
 This script is used to generate the boxplot of each construct that you read in the plate reader. It 
-generates one boxplot with the biological replicates, and also will add the statistical analysis
+generates one boxplot with the biological replicates and also will add the statistical analysis
 to see if each salt concentration has a significant response related to the DxAm/DxDm normalized ratio.
 
 The script consists of a function called FRET.boxplot that has one necessary argument and seven 
@@ -140,13 +140,13 @@ The arguments are similar to the FRET.spectrum file, but with an additional argu
 1. dir.fret: the directory of the FRET folder generated with the FRET.data script (string argument)
 2. format.plot: the extension of the plots. You can choose "pdf" or "png" (string argument)
 4. ymax_text: indicates the high of the statistical values (asterisks) to show in the plot (depends on the FRET response) (numeric argument)
-3. ymax_name: related to the y-axis. Indicates the high of the name of your construct displayed in the plot (numeric argument)
+3. ymax_name: related to the y-axis. Indicates the height of the name of your construct displayed in the plot (numeric argument)
 4. ymax_axis: indicates the maximum range of the y-axis (depends on the FRET response) (numeric argument)
 5. ymix_axis: indicates the minimum range of the y-axis (depends on the FRET response) (numeric argument)
 6. yaxis_ticks: the interval of the y-axis to show in your plot (numeric argument)
 7. bios_name: add the name of the construct in the plot. If you want your name, change it to FALSE (logical argument)
 
-All spectra will be saved in the PLOTS subfolder generated when you ran the FRET.data script. 
+All spectra will be saved in the PLOTS subfolder generated when you run the FRET.data script. 
 
 
 
@@ -165,10 +165,10 @@ The arguments are:
 2. format.plot: the extension of the plots. You can choose "pdf" or "png" (string argument)
 3. xaxis_max: the maximum range of the x-axis to show in your plot (numeric argument)
 4. xaxis_min: the minimum range of the x-axis to show in your plot (numeric argument)
-5. width: the width of the pdf or png image. Related to the saving process in your computer (numeric argument)
-6. height: the height of the pdf or png image. Related to the saving process in your computer (numeric argument)
+5. width: the width of the PDF or PNG image. Related to the saving process in your computer (numeric argument)
+6. height: the height of the PDF or PNG image. Related to the saving process in your computer (numeric argument)
 
-This final script will create a PDF or PNG image of your plot with the dimensions you specify,
+This final script will create a PDF or PNG image of your plot with the dimensions you specify
 and a CSV file containing the name of each construct, the value of delta FRET, and the standard
 deviation of your data. The files will be saved inside the FRET folder named "all_biosensors".
 
@@ -180,7 +180,7 @@ MIT License
 Copyright (c) 2023 Cesar Ponce-Diego
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
+of this software and associated documentation files (the "Software") to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
@@ -189,7 +189,7 @@ furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
