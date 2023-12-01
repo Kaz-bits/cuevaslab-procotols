@@ -1,4 +1,4 @@
-# Load requiered packages
+# Load required packages
 library(ggplot2)
 
 # Function for performing FRET efficiency
@@ -16,10 +16,10 @@ FRET.boxplot <- function(dir.fret,
   
   for (bios in temp_files) {
     
-    # Obtain directory for each construct
+    # Obtain a directory for each construct
     temp_path <- file.path(dir.fret, bios, "DATA", paste0(bios, ".csv"))
     
-    # Verify if exist the file of each construct
+    # Verify if the file of each construct
     if (file.exists(temp_path) == TRUE) {
       
       # Load file
@@ -117,7 +117,7 @@ FRET.boxplot <- function(dir.fret,
         annotate(geom = "text", x = 6, y = ymax_text, label = p5_box) +
         annotate(geom = "text", x = 7, y = ymax_text, label = p6_box)  +
         
-        # Add if statement for adding the name of the construct
+        # Add an if statement for adding the name of the construct
         if (bios_name == TRUE) {
           
           # For adding the desired name 
@@ -126,7 +126,7 @@ FRET.boxplot <- function(dir.fret,
           
         } else {
           
-          # For adding the name put in the folder FRET
+          # For adding the name put it in the folder FRET
           annotate(geom = "text", x = 4, y = ymax_name, label = bios,
                    size = 5)
         }
@@ -146,6 +146,6 @@ FRET.boxplot <- function(dir.fret,
   }
   
   # Show messages
-  message("Plots created with succed")
+  message("Plots created with succeed")
   
 }
